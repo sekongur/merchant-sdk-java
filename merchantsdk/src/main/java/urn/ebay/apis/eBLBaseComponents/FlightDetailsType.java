@@ -378,16 +378,19 @@ public class FlightDetailsType{
 			sb.append("</").append(preferredPrefix).append(":CarrierCode>");
 		}
 		if(stopOverPermitted != null) {
-			sb.append("<").append(preferredPrefix).append(":StopOverPermitted>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.stopOverPermitted));
-			sb.append("</").append(preferredPrefix).append(":StopOverPermitted>");
+			//Changed to fit the API
+			sb.append("<").append(preferredPrefix).append(":StopOverCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.stopOverPermitted));
+			sb.append("</").append(preferredPrefix).append(":StopOverCode>");
 		}
 		if(departureAirport != null) {
-			sb.append("<").append(preferredPrefix).append(":DepartureAirport>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.departureAirport));
-			sb.append("</").append(preferredPrefix).append(":DepartureAirport>");
+			//Changed to fit the API
+			sb.append("<").append(preferredPrefix).append(":OriginAirportCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.departureAirport));
+			sb.append("</").append(preferredPrefix).append(":OriginAirportCode>");
 		}
 		if(arrivalAirport != null) {
-			sb.append("<").append(preferredPrefix).append(":ArrivalAirport>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.arrivalAirport));
-			sb.append("</").append(preferredPrefix).append(":ArrivalAirport>");
+			//Changed to fit the API
+			sb.append("<").append(preferredPrefix).append(":DestinationAirportCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.arrivalAirport));
+			sb.append("</").append(preferredPrefix).append(":DestinationAirportCode>");
 		}
 		if(flightNumber != null) {
 			sb.append("<").append(preferredPrefix).append(":FlightNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.flightNumber));
@@ -415,8 +418,9 @@ public class FlightDetailsType{
 			sb.append(fee.toXMLString(preferredPrefix,"Fee"));
 		}
 		if(endorsementOrRestrictions != null) {
-			sb.append("<").append(preferredPrefix).append(":EndorsementOrRestrictions>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.endorsementOrRestrictions));
-			sb.append("</").append(preferredPrefix).append(":EndorsementOrRestrictions>");
+			//Changed to fit the API
+			sb.append("<").append(preferredPrefix).append(":EndorsementOrRestriction>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.endorsementOrRestrictions));
+			sb.append("</").append(preferredPrefix).append(":EndorsementOrRestriction>");
 		}
 		if(name!=null){
 			if(prefix!=null){
